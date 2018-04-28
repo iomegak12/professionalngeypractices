@@ -1,0 +1,31 @@
+<div class='panel panel-primary box'>
+    <div class='panel-heading'>
+        <span class='heading-style'> {{ customerInfo.name }} </span>
+    </div>
+
+    <div class='panel-body'>
+        <div class="thumbnail">
+            <img src="{{ customerInfo.id | photourl: 'JPG' }}" alt="Photo of {{ customerInfo.name }}" title='Customer Photo of {{ customerInfo.name }}'
+                class='img img-responsive img-rounded'>
+            <div class="caption">
+                <h4>
+                    {{ customerInfo.name }}
+                </h4>
+
+                <p>
+                    {{ customerInfo.remarks }}
+                </p>
+
+                <p>
+                    <a href="#" class="btn btn-success" role="button" data-toggle='modal'
+                        [attr.data-target]="'#customer' + customerInfo.id">Details</a>
+                    <a href="#" class="btn btn-danger" role="button">Dashboard</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <customerdetailviewer-component [customerDetail]='customerInfo' modelId="customer{{customerInfo.id}}"></customerdetailviewer-component>
+</div>

@@ -1,0 +1,11 @@
+cd Angular
+cd demonstrations
+git clone https://github.com/mgechev/angular-seed ngadvanced
+cd ngadvanced
+npm i
+npm run start
+npm run test
+npm run test.watch
+npm run compodoc
+npm run serve.compodoc
+doskey /history > cmd.txt
