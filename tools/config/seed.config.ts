@@ -59,8 +59,13 @@ export const SME_OUTPUT_FORMATS: SourceMapExplorerOutputFormat = {
 export class SeedConfig {
 
   DEV_CUSTOMER_SERVICE_URL: string = 'http://localhost:9999';
-  PROD_CUSTOMER_SERVICE_URL: string = '';
+  PROD_CUSTOMER_SERVICE_URL: string = 'http://ip172-18-0-61-bbjegk7ndhl000fsegjg-8080.direct.labs.play-with-docker.com';
 
+  DEV_PUSH_NOTIFICATIONS_SERVICE_URL: string = 'http://localhost:9999';
+  PROD_PUSH_NOTIFICATIONS_SERVICE_URL: string = 'http://ip172-18-0-61-bbjegk7ndhl000fsegjg-8080.direct.labs.play-with-docker.com';
+
+  DEV_AUTH_SERVICE_URL: string = 'http://localhost:9999';
+  PROD_AUTH_SERVICE_URL: string = 'http://ip172-18-0-61-bbjegk7ndhl000fsegjg-8080.direct.labs.play-with-docker.com';
 
   /**
    * The port where the application will run.

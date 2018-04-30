@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { crmSystemRouteDefinitions } from "../../routing/crmsystem/crmsystem.routes";
 import { CrmSystemComponent } from "../../components/crmsystem/crmsystem.component";
@@ -12,13 +12,20 @@ import { CustomerDetailViewerComponent } from "../../components/customerdetailvi
 import { SymbolPipe } from "../../pipes/symbol/symbol.pipe";
 import { CustomerSearchPanelComponent } from "../../components/customersearchpanel/customersearchpanel.component";
 import { WherePipe } from "../../pipes/where/where.pipe";
+import { NewCustomerComponent } from "../../components/newcustomer/newcustomer.component";
+import { PushNotificationsModule } from "../pushnotifications/pushnotifications.module";
 
 @NgModule({
-    imports: [FormsModule, CommonModule, crmSystemRouteDefinitions],
+    imports: [
+        FormsModule, ReactiveFormsModule, 
+        CommonModule, 
+        PushNotificationsModule,
+        crmSystemRouteDefinitions],
     declarations: [
         CrmSystemComponent, CustomerThumbnailViewer,
         CustomerDetailViewerComponent,
         CustomerSearchPanelComponent,
+        NewCustomerComponent,
         PhotoUrlPipe, SymbolPipe, WherePipe
     ],
     providers: [

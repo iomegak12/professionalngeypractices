@@ -10,6 +10,7 @@ const CUSTOMER_SERVICE_TOKEN: InjectionToken<ICustomerService> =
 
 interface ICustomerService {
     getCustomers(): Observable<Customer[]>;
+    saveCustomerRecord(customerRecord: Customer): Observable<any>;
 }
 
 export { ICustomerService, CUSTOMER_SERVICE_TOKEN, CUSOTMER_SERVICE_URL_TOKEN };

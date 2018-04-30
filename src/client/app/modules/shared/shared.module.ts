@@ -18,9 +18,11 @@ import { ContactMapComponent } from "../../components/contactmap/contactmap.comp
 import { ContactAddressComponent } from "../../components/contactaddress/contactaddress.component";
 import { sharedRouteDefinitions } from "../../routing/shared/shared.routes";
 import { SocialComponent } from "../../components/social/social.component";
+import { SecurityModule } from "../security/security.module";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
-    imports: [sharedRouteDefinitions],
+    imports: [CommonModule, sharedRouteDefinitions, SecurityModule],
     declarations: [
         HeaderComponent,
         LayoutComponent, FooterComponent,

@@ -5,6 +5,7 @@ import { Customer } from "../../models/crmsystem/customer";
 import { Observable } from "rxjs/Observable";
 
 const INVALID_DEPENDENCIES = 'Invalid Dependency Service(s) Provided1';
+const INVALID_ARGUMENTS = 'Invalid Argument(s) Specified!';
 
 class CustomerService implements ICustomerService {
     private customerServiceUrl: string = '';
@@ -25,6 +26,16 @@ class CustomerService implements ICustomerService {
         let customers = this.httpClient.get<Customer[]>(this.customerServiceUrl);
 
         return customers;
+    }
+
+    saveCustomerRecord(customerRecord: Customer): Observable<any> {
+        if (!customerRecord) {
+            throw new Error(INVALID_ARGUMENTS);
+        }
+
+        let result = this.httpClient.post(this.customerServiceUrl, customerRecord);
+
+        return result;
     }
 }
 
